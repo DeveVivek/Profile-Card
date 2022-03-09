@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Profile Card</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main-container {
+        position: relative;
+        width: 290px;
+        height: 400px;
+        background: #121212;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 4);
+        overflow: hidden;
+      }
+
+      .main-container::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("CSS/img1.jpeg") center/cover;
+        transition: 0.7s ease;
+      }
+
+      .main-container::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, #121212 6%, transparent);
+        opacity: 0;
+        transition: 0.7s ease;
+        z-index: 1;
+      }
+
+      .info {
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        width: 100%;
+        height: 110px;
+        text-align: center;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        opacity: 0;
+        transition: 0.7s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        z-index: 1;
+      }
+
+      #name {
+        font-weight: bolder;
+      }
+
+      .links a {
+        color: #fff;
+        font-size: 21px;
+        padding: 5px 13px;
+      }
+
+      .main-container:hover .info {
+        opacity: 1;
+      }
+
+      .main-container:hover::before {
+        opacity: 1;
+      }
+
+      .main-container:hover::after {
+        transform: scale(1.06);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="info">
+        <div>
+          <p id="name">Vivek Kumar</p>
+          <p>Web Developer</p>
+        </div>
+        <div class="links">
+          <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></i></a>
+          <a href="https://www.linkedin.com/in/vivek-kumar-27a875233"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/DeveVivek"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
